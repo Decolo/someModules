@@ -1,4 +1,5 @@
-var Draggable = (function _Draggable(element) {
+var Draggable = function(){
+    function _Draggable(element) {
         //初始化
         this.element = element
         this.elementWidth = this.element.offsetWidth
@@ -22,7 +23,7 @@ var Draggable = (function _Draggable(element) {
         this.element.classList.add('draggable')
             //鼠标点击时，元素的初始坐标
         this.startX = this.element.offsetLeft
-        this.startY = this.elementoffsetTop
+        this.startY = this.element.offsetTop
             //鼠标点击时，鼠标的初始坐标
         this.mouseStartX = event.pageX
         this.mouseStartY = event.pageY
@@ -46,10 +47,12 @@ var Draggable = (function _Draggable(element) {
         div.classList.remove('draggable')
     }
     return {
-        init: funciton(elementsArr) {
-            elementsArr.forEach(function(element) {
+        init: function(elements){
+            elements.forEach(function(element){
                 new _Draggable(element)
             })
         }
     }
-)()
+}()
+
+  
